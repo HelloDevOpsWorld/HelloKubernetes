@@ -1,0 +1,38 @@
+# This YAML file defines a Kubernetes Deployment and a Service for an Nginx web server.
+
+# Define the Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment # Name of the Deployment
+spec:
+  selector:
+    matchLabels:
+      app: nginx # Labels to match Pods created by this Deployment
+  replicas: 1 # Number of Pods to create
+  template:
+    metadata:
+      labels:
+        app: nginx # Labels for the Pod created by this Deployment
+    spec:
+      containers:
+      - name: nginx # Name of the container
+        image: nginx # Docker image to use for the container
+        ports:
+        - containerPort: 80 # Port to expose in the container
+
+# Define the Service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service # Name of the Service
+spec:
+  type: NodePort # Expose the Service on a randomly assigned port on each Node
+  selector:
+    app: nginx # Labels to select the Pods to load balance traffic to
+  ports:
+  - name: http # Name of the port
+    protocol: TCP # Protocol to use for the port
+    port: 80 # Port to expose on the Service
+    targetPort: 80 # Port that the Service should forward traffic to on the Pods
