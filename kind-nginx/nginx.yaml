@@ -4,7 +4,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment # Name of the Deployment
+  name: hello-nginx # Name of the Deployment
 spec:
   selector:
     matchLabels:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nginx # Name of the container
-        image: nginx # Docker image to use for the container
+        image: nginx:latest # Docker image to use for the container
         ports:
         - containerPort: 80 # Port to expose in the container
 
