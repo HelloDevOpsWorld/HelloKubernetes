@@ -16,7 +16,7 @@ To get started with the tutorial, follow these steps.
 
 1. Create a local `kind` cluster with a single node:
 ```bash
-kind create cluster --name hello-kubernetes
+kind create cluster --name hello-nginx
 ```
 
 2. Clone this repository to your local machine
@@ -29,9 +29,9 @@ git clone https://github.com/HelloDevOpsWorld/HelloKubernetes.git
 cd hello-kubernetes/kind-nginx
 ```
 
-4. Deploy the `hello-kubernetes` application to your local cluster using the following command
+4. Deploy the `hello-nginx` application to your local cluster using the following command
 ```bash
-kubectl apply -f deployment.yaml
+kubectl apply -f nginx.yaml
 ```
 
 5. Verify that the application is running by accessing it from your web browser at http://<node-internal-ip>:<exposed-nginx-service-port>. 
@@ -54,9 +54,9 @@ Once you have obtained the node internal IP address and the exposed Nginx servic
 
 
 6. Deleting Your Deployment
-When you're finished testing the hello-kubernetes application, you can delete your deployment and free up resources using the following command
+When you're finished testing the `hello-nginx` deplyment, you can delete it and free up resources using the following command
 ```bash
-kubectl delete deployment hello-kubernetes
+kubectl delete deployment hello-nginx
 ``` 
 
 ## License
