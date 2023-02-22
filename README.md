@@ -31,7 +31,7 @@ cd hello-kubernetes/kind-nginx
 
 4. Deploy the `hello-nginx` application to your local cluster using the following command
 ```bash
-kubectl apply -f nginx.yaml
+kubectl create -f nginx.yaml
 ```
 
 5. Verify that the application is running by accessing it from your web browser at http://<node-internal-ip>:<exposed-nginx-service-port>. 
