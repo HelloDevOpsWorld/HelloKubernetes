@@ -1,6 +1,6 @@
 # HelloKubernetes
 
-Welcome to the HelloKubernetes repository! This is a beginner-friendly tutorial on deploying a simple "Hello, World" application on a local Kubernetes cluster using the Kind container.
+Welcome to the HelloKubernetes repository! This is a beginner-friendly tutorial on deploying a simple `nginx` web server on a local Kubernetes cluster using the Kind container.
 
 ## Prerequisites
 
